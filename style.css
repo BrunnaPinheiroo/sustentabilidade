@@ -1,0 +1,109 @@
+/* Definição de cores e fontes */
+:root {
+    --verde-escuro: #2D5A27;
+    --verde-claro: #4CAF50;
+    --off-white: #F9F7F2;
+    --branco: #FFFFFF;
+    --marrom: #5D4037;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--off-white);
+    color: var(--marrom);
+    overflow-x: hidden;
+}
+
+/* Menu Superior */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background: var(--verde-escuro);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Seções de conteúdo */
+.content-section {
+    padding: 80px 10%;
+    min-height: 40vh;
+}
+
+.bg-light { background-color: var(--branco); }
+.bg-green { background-color: var(--verde-claro); color: rgb(92, 201, 49); }
+
+.container { max-width: 1000px; margin: auto; }
+
+/* Capa do site */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Balão de interação */
+.hidden { display: none; }
+#balao-interacao {
+    background: var(--marrom);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    animation: bounce 1s infinite alternate;
+}
+
+/* Cards dos Pilares */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: var(--off-white);
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid var(--verde-claro);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsividade para Celular */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Esconde o menu no mobile para simplificar */
+    h1 { font-size: 2rem; }
+}
+
+/* Animação do balão */
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+.emoji-animado {
+    font-size: 100px;
+    display: inline-block;
+    cursor: pointer;
+}
